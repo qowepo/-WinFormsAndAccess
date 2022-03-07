@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example", "Example.vcxproj", "{C697070A-B515-4ACC-9085-599C8CAE4779}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NNGY Installer", "NNGY Installer\NNGY Installer.vdproj", "{733E9822-DC0E-4065-B00F-0466A164DFE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Debug|x64.ActiveCfg = Debug|x64
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Debug|x64.Build.0 = Debug|x64
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Debug|x86.ActiveCfg = Debug|Win32
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Debug|x86.Build.0 = Debug|Win32
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Release|x64.ActiveCfg = Release|x64
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Release|x64.Build.0 = Release|x64
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Release|x86.ActiveCfg = Release|Win32
+		{C697070A-B515-4ACC-9085-599C8CAE4779}.Release|x86.Build.0 = Release|Win32
+		{733E9822-DC0E-4065-B00F-0466A164DFE2}.Debug|x64.ActiveCfg = Debug
+		{733E9822-DC0E-4065-B00F-0466A164DFE2}.Debug|x86.ActiveCfg = Debug
+		{733E9822-DC0E-4065-B00F-0466A164DFE2}.Release|x64.ActiveCfg = Release
+		{733E9822-DC0E-4065-B00F-0466A164DFE2}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {353FBADF-8303-4E3C-B7BC-762A48104965}
+	EndGlobalSection
+EndGlobal
