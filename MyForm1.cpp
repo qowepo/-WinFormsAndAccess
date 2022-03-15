@@ -16,10 +16,12 @@ System::Void Example::MyForm1::áàçàAccessToolStripMenuItem_Click(System::Object^
 	return System::Void();
 }
 
+
 System::Void Example::MyForm1::âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Application::Exit();
 }
+
 
 System::Void Example::MyForm1::íîìåğÊîìíàòûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -29,3 +31,5 @@ System::Void Example::MyForm1::íîìåğÊîìíàòûToolStripMenuItem_Click(System::Objec
 	 
 	return System::Void();
 }
+
+ 

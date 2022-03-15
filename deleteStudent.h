@@ -124,7 +124,8 @@ namespace Example {
 
 		}
 #pragma endregion
-	private: System::Void button_nDelete_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void button_nDelete_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_Deleted_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void DeletePhoto(String^& IdStudentPhotoDelete);
 };
 }

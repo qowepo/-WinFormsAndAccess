@@ -128,6 +128,7 @@
     <ClCompile Include="deleteStudent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="Password.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,10 @@
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Password.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Student.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -166,9 +171,18 @@
     <EmbeddedResource Include="MyForm1.resx">
       <DependentUpon>MyForm1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Example.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="unn_iconka.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

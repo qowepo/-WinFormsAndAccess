@@ -60,6 +60,10 @@ namespace Example {
 	private: System::Windows::Forms::Button^ button_nAdd;
 	private: System::Windows::Forms::Button^ button_add;
 	private: System::Windows::Forms::Button^ button_idOK;
+	private: System::Windows::Forms::PictureBox^ pictureBox_CorFoto;
+	private: System::Windows::Forms::Button^ button_CorFoto;
+
+
 
 	private:
 		/// <summary>
@@ -94,7 +98,10 @@ namespace Example {
 			this->button_nAdd = (gcnew System::Windows::Forms::Button());
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->button_idOK = (gcnew System::Windows::Forms::Button());
+			this->pictureBox_CorFoto = (gcnew System::Windows::Forms::PictureBox());
+			this->button_CorFoto = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_CorFoto))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -102,7 +109,7 @@ namespace Example {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->инструкцияПоЗаполнениюToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(466, 24);
+			this->menuStrip1->Size = System::Drawing::Size(490, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -255,7 +262,7 @@ namespace Example {
 			// 
 			this->button_nAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_nAdd->Location = System::Drawing::Point(43, 304);
+			this->button_nAdd->Location = System::Drawing::Point(43, 311);
 			this->button_nAdd->Name = L"button_nAdd";
 			this->button_nAdd->Size = System::Drawing::Size(105, 30);
 			this->button_nAdd->TabIndex = 20;
@@ -267,7 +274,7 @@ namespace Example {
 			// 
 			this->button_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_add->Location = System::Drawing::Point(321, 304);
+			this->button_add->Location = System::Drawing::Point(349, 311);
 			this->button_add->Name = L"button_add";
 			this->button_add->Size = System::Drawing::Size(105, 30);
 			this->button_add->TabIndex = 21;
@@ -288,11 +295,37 @@ namespace Example {
 			this->button_idOK->UseVisualStyleBackColor = true;
 			this->button_idOK->Click += gcnew System::EventHandler(this, &correctStudent::button_idOK_Click);
 			// 
+			// pictureBox_CorFoto
+			// 
+			this->pictureBox_CorFoto->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox_CorFoto->Location = System::Drawing::Point(460, 39);
+			this->pictureBox_CorFoto->Name = L"pictureBox_CorFoto";
+			this->pictureBox_CorFoto->Size = System::Drawing::Size(170, 230);
+			this->pictureBox_CorFoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox_CorFoto->TabIndex = 23;
+			this->pictureBox_CorFoto->TabStop = false;
+			this->pictureBox_CorFoto->Visible = false;
+			// 
+			// button_CorFoto
+			// 
+			this->button_CorFoto->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button_CorFoto->Location = System::Drawing::Point(359, 275);
+			this->button_CorFoto->Name = L"button_CorFoto";
+			this->button_CorFoto->Size = System::Drawing::Size(95, 29);
+			this->button_CorFoto->TabIndex = 24;
+			this->button_CorFoto->Text = L"Изменить фото...";
+			this->button_CorFoto->UseVisualStyleBackColor = true;
+			this->button_CorFoto->Visible = false;
+			this->button_CorFoto->Click += gcnew System::EventHandler(this, &correctStudent::button_CorFoto_Click);
+			// 
 			// correctStudent
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(466, 351);
+			this->ClientSize = System::Drawing::Size(490, 354);
+			this->Controls->Add(this->button_CorFoto);
+			this->Controls->Add(this->pictureBox_CorFoto);
 			this->Controls->Add(this->button_idOK);
 			this->Controls->Add(this->button_add);
 			this->Controls->Add(this->button_nAdd);
@@ -311,15 +344,18 @@ namespace Example {
 			this->Controls->Add(this->textBox_id);
 			this->Controls->Add(this->label1_add);
 			this->Controls->Add(this->menuStrip1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
-			this->MaximumSize = System::Drawing::Size(482, 390);
-			this->MinimumSize = System::Drawing::Size(482, 390);
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(666, 404);
+			this->MinimumSize = System::Drawing::Size(506, 393);
 			this->Name = L"correctStudent";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Обновление данных о студенте";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_CorFoto))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -330,7 +366,11 @@ private: System::Void инструкцияПоЗаполнениюToolStripMenuItem_Click(System::Obje
 private: System::Void button_nAdd_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_add_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_idOK_Click(System::Object^ sender, System::EventArgs^ e);
-	private:   System::Void Example::correctStudent::Protect_id(bool& correctData);
-		   private:   System::Void Example::correctStudent::Protect(bool& correctData);
+private: System::Void Protect_id(bool& correctData);
+private: System::Void Protect(bool& correctData);
+private: System::Void button_CorFoto_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void PrintPhoto(String^& WayPhoto);
+ 
+private: System::Void DeletePhoto(String^& IdStudentPhotoDelete);
 };
 }

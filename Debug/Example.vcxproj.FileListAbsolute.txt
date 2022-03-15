@@ -8,3 +8,4 @@ C:\Users\nikul\source\repos\Example\Debug\Example.Student.resources
 C:\Users\nikul\source\repos\Example\Debug\Example.addStudent.resources
 C:\Users\nikul\source\repos\Example\Debug\Example.correctStudent.resources
 C:\Users\nikul\source\repos\Example\Debug\Example.deleteStudent.resources
+C:\Users\nikul\source\repos\Example\Debug\Example.Password.resources

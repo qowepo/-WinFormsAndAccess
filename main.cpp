@@ -1,5 +1,4 @@
-#include "Access.h"
-#include "MyForm1.h"
+#include "Password.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -11,6 +10,6 @@ void main(array<String^>^ args)
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Example::MyForm1 form;
+	Example::Password form;
 	Application::Run(% form);
 }

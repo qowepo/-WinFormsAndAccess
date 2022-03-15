@@ -9,7 +9,6 @@ using namespace System::Windows::Forms;
 using namespace System::Data::OleDb;
 
  
-
 System::Void Example::Access::главнаяToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	MyForm1^ f1 = gcnew MyForm1();
@@ -17,6 +16,7 @@ System::Void Example::Access::главнаяToolStripMenuItem_Click(System::Object^ sen
 	Access::Hide();
 	return System::Void();
 }
+
 
 System::Void Example::Access::выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -32,12 +32,14 @@ System::Void Example::Access::button_Загрузить_Click(System::Object^ sender, Sys
 	return;
 }
 
+
 System::Void Example::Access::button_Обновить_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	correctStudent^ f6 = gcnew correctStudent();
 	f6->Show();
 	return System::Void();
 }
+
 
 System::Void Example::Access::button_Добавить_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -46,6 +48,7 @@ System::Void Example::Access::button_Добавить_Click(System::Object^ sender, Syst
 	return System::Void();
 }
 
+
 System::Void Example::Access::button_Удалить_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	deleteStudent^ f4 = gcnew deleteStudent();
@@ -53,34 +56,53 @@ System::Void Example::Access::button_Удалить_Click(System::Object^ sender, Syste
 	return System::Void();
 }
 
+
 System::Void Example::Access::toolStripButton_RoomNumber_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (toolStripTextBox_RoomNumber->Text->Length > 0 && toolStripTextBox_RoomNumber->Text->Length <= 4)
+	if (!(toolStripTextBox_RoomNumber->Text->Length > 0 && toolStripTextBox_RoomNumber->Text->Length <= 4))
 	{
-		bool Protected = true;
-		for (int i = 0; i < toolStripTextBox_RoomNumber->Text->Length; i++)
-		{
-			if (!(toolStripTextBox_RoomNumber->Text[i] >= '0' && toolStripTextBox_RoomNumber->Text[i] <= '9'))
-				Protected = false;
-		}
-		if (Protected)
-		{
-			String^ queryRoom = "WHERE room LIKE " + toolStripTextBox_RoomNumber->Text; //show selected room
-			PrintStudentRoom(queryRoom);
-		}
-		else 
-		{ 
-			MessageBox::Show("Введите корректный номер комнаты!", "Внимание!");
-			toolStripTextBox_RoomNumber->Clear();
-		}
-	}
-	else
-	{
-		MessageBox::Show("Введите корректный номер комнаты!", "Внимание!");
+		MessageBox::Show("Введите корректный номер комнаты!", "Внимание!", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		toolStripTextBox_RoomNumber->Clear();
+		String^ queryRoom = ""; //show all student
+		PrintStudentRoom(queryRoom);
+		return System::Void();
 	}
+
+	for (int i = 0; i < toolStripTextBox_RoomNumber->Text->Length; i++)
+	{
+		if (!(toolStripTextBox_RoomNumber->Text[i] >= '0' && toolStripTextBox_RoomNumber->Text[i] <= '9'))
+		{
+			MessageBox::Show("Введите корректный номер комнаты!", "Внимание!", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			toolStripTextBox_RoomNumber->Clear();
+			String^ queryRoom = ""; //show all student
+			PrintStudentRoom(queryRoom);
+			return System::Void();
+		}
+	}
+
+	String^ queryRoom = "WHERE room LIKE " + toolStripTextBox_RoomNumber->Text; //show selected room
+	PrintStudentRoom(queryRoom);
 	return System::Void();
 }
+
+
+System::Void Example::Access::Access_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	
+	toolStripTextBox_RoomNumber->Clear();
+	String^ queryRoom = ""; //show all student
+	PrintStudentRoom(queryRoom);
+	return;
+}
+
+
+System::Void Example::Access::инфоToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	MessageBox::Show("Для корректного отображения данных в таблице обновляйте сооединение с базой после всяческих изменений!",
+		                    "Внимание!", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	return System::Void();
+}
+
 
 System::Void Example::Access::PrintStudentRoom(String^& queryRoom)
 {
@@ -94,20 +116,23 @@ System::Void Example::Access::PrintStudentRoom(String^& queryRoom)
 
 	if (dbReader->HasRows == false)
 	{
-		MessageBox::Show("Пока нет данных о комнате!", "Внимание!");
+		MessageBox::Show("В базе нет данных о комнате!", "Внимание!", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		toolStripTextBox_RoomNumber->Clear();
+		String^ queryRoom = ""; //show all student
+		PrintStudentRoom(queryRoom);
+		dbReader->Close();
+		dbConnection->Close();
+		return System::Void();
 	}
-	else
-	{
-		dataGridView_Access->Rows->Clear();
-		while (dbReader->Read())
-		{
-			dataGridView_Access->Rows->Add(dbReader["number"], dbReader["family"], dbReader["name"], dbReader["facul"], dbReader["kyrs"], dbReader["room"], dbReader["phone"]);
-		}
 
-		
+	dataGridView_Access->Rows->Clear();
+	while (dbReader->Read())
+	{
+		dataGridView_Access->Rows->Add(dbReader["number"], dbReader["family"],
+			dbReader["name"], dbReader["facul"], dbReader["kyrs"], dbReader["room"], dbReader["phone"]);
 	}
 
 	dbReader->Close();
 	dbConnection->Close();
+	return System::Void();
 }

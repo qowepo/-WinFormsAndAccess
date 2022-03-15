@@ -53,6 +53,8 @@ namespace Example {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ ïîìîîùüToolStripMenuItem;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+	private: System::Windows::Forms::PictureBox^ pictureBox_AddFoto;
+	private: System::Windows::Forms::Button^ button_AddFoto;
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
@@ -92,7 +94,10 @@ namespace Example {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ïîìîîùüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->pictureBox_AddFoto = (gcnew System::Windows::Forms::PictureBox());
+			this->button_AddFoto = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_AddFoto))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1_add
@@ -226,7 +231,7 @@ namespace Example {
 			// 
 			this->button_nAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_nAdd->Location = System::Drawing::Point(43, 304);
+			this->button_nAdd->Location = System::Drawing::Point(78, 323);
 			this->button_nAdd->Name = L"button_nAdd";
 			this->button_nAdd->Size = System::Drawing::Size(105, 30);
 			this->button_nAdd->TabIndex = 13;
@@ -238,7 +243,7 @@ namespace Example {
 			// 
 			this->button_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_add->Location = System::Drawing::Point(321, 304);
+			this->button_add->Location = System::Drawing::Point(467, 323);
 			this->button_add->Name = L"button_add";
 			this->button_add->Size = System::Drawing::Size(105, 30);
 			this->button_add->TabIndex = 14;
@@ -251,7 +256,7 @@ namespace Example {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ïîìîîùüToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(466, 24);
+			this->menuStrip1->Size = System::Drawing::Size(650, 24);
 			this->menuStrip1->TabIndex = 15;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -267,11 +272,36 @@ namespace Example {
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
 			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
 			// 
+			// pictureBox_AddFoto
+			// 
+			this->pictureBox_AddFoto->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox_AddFoto->Location = System::Drawing::Point(458, 39);
+			this->pictureBox_AddFoto->Name = L"pictureBox_AddFoto";
+			this->pictureBox_AddFoto->Size = System::Drawing::Size(150, 210);
+			this->pictureBox_AddFoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox_AddFoto->TabIndex = 16;
+			this->pictureBox_AddFoto->TabStop = false;
+			this->pictureBox_AddFoto->Click += gcnew System::EventHandler(this, &addStudent::pictureBox_AddFoto_Click);
+			// 
+			// button_AddFoto
+			// 
+			this->button_AddFoto->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button_AddFoto->Location = System::Drawing::Point(512, 255);
+			this->button_AddFoto->Name = L"button_AddFoto";
+			this->button_AddFoto->Size = System::Drawing::Size(95, 29);
+			this->button_AddFoto->TabIndex = 17;
+			this->button_AddFoto->Text = L"Äîáàâèòü ôîòî...";
+			this->button_AddFoto->UseVisualStyleBackColor = true;
+			this->button_AddFoto->Click += gcnew System::EventHandler(this, &addStudent::button_AddFoto_Click);
+			// 
 			// addStudent
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(466, 351);
+			this->ClientSize = System::Drawing::Size(650, 365);
+			this->Controls->Add(this->button_AddFoto);
+			this->Controls->Add(this->pictureBox_AddFoto);
 			this->Controls->Add(this->button_add);
 			this->Controls->Add(this->button_nAdd);
 			this->Controls->Add(this->textBox_phone);
@@ -292,23 +322,28 @@ namespace Example {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(482, 390);
-			this->MinimumSize = System::Drawing::Size(482, 390);
+			this->MaximumSize = System::Drawing::Size(666, 404);
+			this->MinimumSize = System::Drawing::Size(666, 404);
 			this->Name = L"addStudent";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Äîáàâèòü ñòóäåíòà â áàçó";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_AddFoto))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {}
+    private: System::Void pictureBox_AddFoto_Click(System::Object^ sender, System::EventArgs^ e){}
 
 private: System::Void button_nAdd_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_add_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void Example::addStudent::Protect(bool & correctData);
+private: System::Void Protect(bool & correctData);
 private: System::Void ïîìîîùüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void button_AddFoto_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void SavePhoto(String^& room, String^& id, bool& GoodSave);
+
 };
 }

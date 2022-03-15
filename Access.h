@@ -48,6 +48,14 @@ namespace Example {
 	private: System::Windows::Forms::Button^ button_ƒÓ·‡‚ËÚ¸;
 	private: System::Windows::Forms::Button^ button_”‰‡ÎËÚ¸;
 	private: System::Windows::Forms::PictureBox^ pictureBox_Access;
+
+
+
+
+
+
+
+	private: System::Windows::Forms::ToolStripMenuItem^ ËÌÙÓToolStripMenuItem;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ number;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ family;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
@@ -78,26 +86,29 @@ namespace Example {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Access::typeid));
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->„Î‡‚Ì‡ˇToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ËÌÙÓToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->‚˚ıÓ‰ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripLabel_RoomNumber = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripTextBox_RoomNumber = (gcnew System::Windows::Forms::ToolStripTextBox());
 			this->toolStripButton_RoomNumber = (gcnew System::Windows::Forms::ToolStripButton());
 			this->dataGridView_Access = (gcnew System::Windows::Forms::DataGridView());
-			this->number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->family = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->facul = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->kyrs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->room = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->phone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button_«‡„ÛÁËÚ¸ = (gcnew System::Windows::Forms::Button());
 			this->button_Œ·ÌÓ‚ËÚ¸ = (gcnew System::Windows::Forms::Button());
 			this->button_ƒÓ·‡‚ËÚ¸ = (gcnew System::Windows::Forms::Button());
 			this->button_”‰‡ÎËÚ¸ = (gcnew System::Windows::Forms::Button());
 			this->pictureBox_Access = (gcnew System::Windows::Forms::PictureBox());
+			this->phone = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->room = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->kyrs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->facul = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->family = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Access))->BeginInit();
@@ -106,27 +117,40 @@ namespace Example {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->„Î‡‚Ì‡ˇToolStripMenuItem,
-					this->‚˚ıÓ‰ToolStripMenuItem
+					this->ËÌÙÓToolStripMenuItem, this->‚˚ıÓ‰ToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(745, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1025, 25);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// „Î‡‚Ì‡ˇToolStripMenuItem
 			// 
+			this->„Î‡‚Ì‡ˇToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->„Î‡‚Ì‡ˇToolStripMenuItem->Name = L"„Î‡‚Ì‡ˇToolStripMenuItem";
-			this->„Î‡‚Ì‡ˇToolStripMenuItem->Size = System::Drawing::Size(63, 20);
+			this->„Î‡‚Ì‡ˇToolStripMenuItem->Size = System::Drawing::Size(68, 21);
 			this->„Î‡‚Ì‡ˇToolStripMenuItem->Text = L"√Î‡‚Ì‡ˇ";
 			this->„Î‡‚Ì‡ˇToolStripMenuItem->Click += gcnew System::EventHandler(this, &Access::„Î‡‚Ì‡ˇToolStripMenuItem_Click);
 			// 
+			// ËÌÙÓToolStripMenuItem
+			// 
+			this->ËÌÙÓToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->ËÌÙÓToolStripMenuItem->Name = L"ËÌÙÓToolStripMenuItem";
+			this->ËÌÙÓToolStripMenuItem->Size = System::Drawing::Size(54, 21);
+			this->ËÌÙÓToolStripMenuItem->Text = L"»ÌÙÓ";
+			this->ËÌÙÓToolStripMenuItem->Click += gcnew System::EventHandler(this, &Access::ËÌÙÓToolStripMenuItem_Click);
+			// 
 			// ‚˚ıÓ‰ToolStripMenuItem
 			// 
+			this->‚˚ıÓ‰ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->‚˚ıÓ‰ToolStripMenuItem->Name = L"‚˚ıÓ‰ToolStripMenuItem";
-			this->‚˚ıÓ‰ToolStripMenuItem->Size = System::Drawing::Size(54, 20);
+			this->‚˚ıÓ‰ToolStripMenuItem->Size = System::Drawing::Size(57, 21);
 			this->‚˚ıÓ‰ToolStripMenuItem->Text = L"¬˚ıÓ‰";
 			this->‚˚ıÓ‰ToolStripMenuItem->Click += gcnew System::EventHandler(this, &Access::‚˚ıÓ‰ToolStripMenuItem_Click);
 			// 
@@ -137,26 +161,28 @@ namespace Example {
 				this->toolStripLabel_RoomNumber,
 					this->toolStripTextBox_RoomNumber, this->toolStripButton_RoomNumber
 			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 463);
+			this->toolStrip1->Location = System::Drawing::Point(0, 565);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(745, 25);
+			this->toolStrip1->Size = System::Drawing::Size(1025, 27);
 			this->toolStrip1->TabIndex = 1;
 			this->toolStrip1->Text = L"toolStrip1";
+			this->toolStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Access::toolStrip1_ItemClicked);
 			// 
 			// toolStripLabel_RoomNumber
 			// 
-			this->toolStripLabel_RoomNumber->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->toolStripLabel_RoomNumber->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->toolStripLabel_RoomNumber->Name = L"toolStripLabel_RoomNumber";
-			this->toolStripLabel_RoomNumber->Size = System::Drawing::Size(156, 22);
+			this->toolStripLabel_RoomNumber->Size = System::Drawing::Size(183, 24);
 			this->toolStripLabel_RoomNumber->Text = L"¬‚Â‰ËÚÂ ÌÓÏÂ ÍÓÏÌ‡Ú˚:";
 			// 
 			// toolStripTextBox_RoomNumber
 			// 
-			this->toolStripTextBox_RoomNumber->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->toolStripTextBox_RoomNumber->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->toolStripTextBox_RoomNumber->Name = L"toolStripTextBox_RoomNumber";
 			this->toolStripTextBox_RoomNumber->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->toolStripTextBox_RoomNumber->Size = System::Drawing::Size(100, 25);
+			this->toolStripTextBox_RoomNumber->Size = System::Drawing::Size(100, 27);
 			// 
 			// toolStripButton_RoomNumber
 			// 
@@ -164,7 +190,7 @@ namespace Example {
 			this->toolStripButton_RoomNumber->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton_RoomNumber.Image")));
 			this->toolStripButton_RoomNumber->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton_RoomNumber->Name = L"toolStripButton_RoomNumber";
-			this->toolStripButton_RoomNumber->Size = System::Drawing::Size(23, 22);
+			this->toolStripButton_RoomNumber->Size = System::Drawing::Size(23, 24);
 			this->toolStripButton_RoomNumber->Text = L"toolStripButton1";
 			this->toolStripButton_RoomNumber->Click += gcnew System::EventHandler(this, &Access::toolStripButton_RoomNumber_Click);
 			// 
@@ -175,65 +201,53 @@ namespace Example {
 			this->dataGridView_Access->AllowUserToResizeColumns = false;
 			this->dataGridView_Access->AllowUserToResizeRows = false;
 			this->dataGridView_Access->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView_Access->BackgroundColor = System::Drawing::SystemColors::MenuBar;
+			this->dataGridView_Access->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::Raised;
 			this->dataGridView_Access->ClipboardCopyMode = System::Windows::Forms::DataGridViewClipboardCopyMode::EnableWithoutHeaderText;
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::TopCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView_Access->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView_Access->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView_Access->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
 				this->number,
 					this->family, this->name, this->facul, this->kyrs, this->room, this->phone
 			});
-			this->dataGridView_Access->Location = System::Drawing::Point(12, 27);
+			this->dataGridView_Access->Cursor = System::Windows::Forms::Cursors::IBeam;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::TopCenter;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView_Access->DefaultCellStyle = dataGridViewCellStyle2;
+			this->dataGridView_Access->Enabled = false;
+			this->dataGridView_Access->GridColor = System::Drawing::SystemColors::Window;
+			this->dataGridView_Access->Location = System::Drawing::Point(12, 40);
+			this->dataGridView_Access->MultiSelect = false;
 			this->dataGridView_Access->Name = L"dataGridView_Access";
-			this->dataGridView_Access->ReadOnly = true;
 			this->dataGridView_Access->ShowCellErrors = false;
 			this->dataGridView_Access->ShowCellToolTips = false;
 			this->dataGridView_Access->ShowEditingIcon = false;
 			this->dataGridView_Access->ShowRowErrors = false;
-			this->dataGridView_Access->Size = System::Drawing::Size(721, 310);
+			this->dataGridView_Access->Size = System::Drawing::Size(1001, 388);
 			this->dataGridView_Access->TabIndex = 2;
-			// 
-			// number
-			// 
-			this->number->HeaderText = L"ID ÒÚÛ‰ÂÌÚ‡";
-			this->number->Name = L"number";
-			// 
-			// family
-			// 
-			this->family->HeaderText = L" ‘‡ÏËÎËˇ";
-			this->family->Name = L"family";
-			// 
-			// name
-			// 
-			this->name->HeaderText = L"»Ïˇ";
-			this->name->Name = L"name";
-			// 
-			// facul
-			// 
-			this->facul->HeaderText = L"‘‡ÍÛÎ¸ÚÂÚ";
-			this->facul->Name = L"facul";
-			// 
-			// kyrs
-			// 
-			this->kyrs->HeaderText = L" ÛÒ";
-			this->kyrs->Name = L"kyrs";
-			// 
-			// room
-			// 
-			this->room->HeaderText = L" ÓÏÌ‡Ú‡";
-			this->room->Name = L"room";
-			// 
-			// phone
-			// 
-			this->phone->HeaderText = L"ÕÓÏÂ ÚÂÎÂÙÓÌ‡";
-			this->phone->Name = L"phone";
 			// 
 			// button_«‡„ÛÁËÚ¸
 			// 
 			this->button_«‡„ÛÁËÚ¸->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_«‡„ÛÁËÚ¸.BackgroundImage")));
 			this->button_«‡„ÛÁËÚ¸->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->button_«‡„ÛÁËÚ¸->Location = System::Drawing::Point(27, 343);
+			this->button_«‡„ÛÁËÚ¸->Location = System::Drawing::Point(27, 446);
 			this->button_«‡„ÛÁËÚ¸->Name = L"button_«‡„ÛÁËÚ¸";
-			this->button_«‡„ÛÁËÚ¸->Size = System::Drawing::Size(139, 57);
+			this->button_«‡„ÛÁËÚ¸->Size = System::Drawing::Size(250, 48);
 			this->button_«‡„ÛÁËÚ¸->TabIndex = 3;
 			this->button_«‡„ÛÁËÚ¸->Text = L"Œ·ÌÓ‚ËÚ¸ ÒÓÂ‰ËÌÂÌËÂ Ò ·‡ÁÓÈ";
 			this->button_«‡„ÛÁËÚ¸->UseVisualStyleBackColor = true;
@@ -244,9 +258,9 @@ namespace Example {
 			this->button_Œ·ÌÓ‚ËÚ¸->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_Œ·ÌÓ‚ËÚ¸.BackgroundImage")));
 			this->button_Œ·ÌÓ‚ËÚ¸->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_Œ·ÌÓ‚ËÚ¸->Location = System::Drawing::Point(172, 343);
+			this->button_Œ·ÌÓ‚ËÚ¸->Location = System::Drawing::Point(283, 446);
 			this->button_Œ·ÌÓ‚ËÚ¸->Name = L"button_Œ·ÌÓ‚ËÚ¸";
-			this->button_Œ·ÌÓ‚ËÚ¸->Size = System::Drawing::Size(139, 57);
+			this->button_Œ·ÌÓ‚ËÚ¸->Size = System::Drawing::Size(250, 48);
 			this->button_Œ·ÌÓ‚ËÚ¸->TabIndex = 4;
 			this->button_Œ·ÌÓ‚ËÚ¸->Text = L" ÓÂÍÚËÓ‚‡Ú¸ ‰‡ÌÌ˚Â ÒÚÛ‰ÂÌÚ‡";
 			this->button_Œ·ÌÓ‚ËÚ¸->UseVisualStyleBackColor = true;
@@ -257,9 +271,9 @@ namespace Example {
 			this->button_ƒÓ·‡‚ËÚ¸->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_ƒÓ·‡‚ËÚ¸.BackgroundImage")));
 			this->button_ƒÓ·‡‚ËÚ¸->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_ƒÓ·‡‚ËÚ¸->Location = System::Drawing::Point(27, 403);
+			this->button_ƒÓ·‡‚ËÚ¸->Location = System::Drawing::Point(27, 500);
 			this->button_ƒÓ·‡‚ËÚ¸->Name = L"button_ƒÓ·‡‚ËÚ¸";
-			this->button_ƒÓ·‡‚ËÚ¸->Size = System::Drawing::Size(139, 57);
+			this->button_ƒÓ·‡‚ËÚ¸->Size = System::Drawing::Size(250, 48);
 			this->button_ƒÓ·‡‚ËÚ¸->TabIndex = 5;
 			this->button_ƒÓ·‡‚ËÚ¸->Text = L"ƒÓ·‡‚ËÚ¸ ÒÚÛ‰ÂÌÚ‡ ‚ ·‡ÁÛ";
 			this->button_ƒÓ·‡‚ËÚ¸->UseVisualStyleBackColor = true;
@@ -270,9 +284,9 @@ namespace Example {
 			this->button_”‰‡ÎËÚ¸->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_”‰‡ÎËÚ¸.BackgroundImage")));
 			this->button_”‰‡ÎËÚ¸->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_”‰‡ÎËÚ¸->Location = System::Drawing::Point(172, 403);
+			this->button_”‰‡ÎËÚ¸->Location = System::Drawing::Point(283, 500);
 			this->button_”‰‡ÎËÚ¸->Name = L"button_”‰‡ÎËÚ¸";
-			this->button_”‰‡ÎËÚ¸->Size = System::Drawing::Size(139, 57);
+			this->button_”‰‡ÎËÚ¸->Size = System::Drawing::Size(250, 48);
 			this->button_”‰‡ÎËÚ¸->TabIndex = 6;
 			this->button_”‰‡ÎËÚ¸->Text = L"”‰‡ÎËÚ¸ ÒÚÛ‰ÂÌÚ‡ ËÁ ·‡Á˚";
 			this->button_”‰‡ÎËÚ¸->UseVisualStyleBackColor = true;
@@ -282,19 +296,54 @@ namespace Example {
 			// 
 			this->pictureBox_Access->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox_Access.BackgroundImage")));
 			this->pictureBox_Access->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox_Access.Image")));
-			this->pictureBox_Access->Location = System::Drawing::Point(338, 343);
+			this->pictureBox_Access->Location = System::Drawing::Point(565, 434);
 			this->pictureBox_Access->Name = L"pictureBox_Access";
-			this->pictureBox_Access->Size = System::Drawing::Size(379, 110);
+			this->pictureBox_Access->Size = System::Drawing::Size(448, 114);
 			this->pictureBox_Access->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox_Access->TabIndex = 7;
 			this->pictureBox_Access->TabStop = false;
+			// 
+			// phone
+			// 
+			this->phone->HeaderText = L"ÕÓÏÂ ÚÂÎÂÙÓÌ‡";
+			this->phone->Name = L"phone";
+			// 
+			// room
+			// 
+			this->room->HeaderText = L" ÓÏÌ‡Ú‡";
+			this->room->Name = L"room";
+			// 
+			// kyrs
+			// 
+			this->kyrs->HeaderText = L" ÛÒ";
+			this->kyrs->Name = L"kyrs";
+			// 
+			// facul
+			// 
+			this->facul->HeaderText = L"‘‡ÍÛÎ¸ÚÂÚ";
+			this->facul->Name = L"facul";
+			// 
+			// name
+			// 
+			this->name->HeaderText = L"»Ïˇ";
+			this->name->Name = L"name";
+			// 
+			// family
+			// 
+			this->family->HeaderText = L" ‘‡ÏËÎËˇ";
+			this->family->Name = L"family";
+			// 
+			// number
+			// 
+			this->number->HeaderText = L"ID ÒÚÛ‰ÂÌÚ‡";
+			this->number->Name = L"number";
 			// 
 			// Access
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(745, 488);
+			this->ClientSize = System::Drawing::Size(1025, 592);
 			this->Controls->Add(this->pictureBox_Access);
 			this->Controls->Add(this->button_”‰‡ÎËÚ¸);
 			this->Controls->Add(this->button_ƒÓ·‡‚ËÚ¸);
@@ -306,11 +355,12 @@ namespace Example {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(761, 527);
-			this->MinimumSize = System::Drawing::Size(761, 527);
+			this->MaximumSize = System::Drawing::Size(1041, 631);
+			this->MinimumSize = System::Drawing::Size(1041, 631);
 			this->Name = L"Access";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Baza NNGY";
+			this->Load += gcnew System::EventHandler(this, &Access::Access_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->toolStrip1->ResumeLayout(false);
@@ -322,14 +372,17 @@ namespace Example {
 
 		}
 #pragma endregion
-	private: System::Void „Î‡‚Ì‡ˇToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void „Î‡‚Ì‡ˇToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void ‚˚ıÓ‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_«‡„ÛÁËÚ¸_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_Œ·ÌÓ‚ËÚ¸_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_ƒÓ·‡‚ËÚ¸_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button_”‰‡ÎËÚ¸_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void toolStripButton_RoomNumber_Click(System::Object^ sender, System::EventArgs^ e);
-	   private:System::Void Example::Access::PrintStudentRoom(String^& queryRoom);
- 
+private:System::Void Example::Access::PrintStudentRoom(String^& queryRoom);
+private: System::Void Access_Load(System::Object^ sender, System::EventArgs^ e);
+private: System::Void toolStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {}
+private: System::Void ËÌÙÓToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

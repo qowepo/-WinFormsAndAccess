@@ -1,12 +1,6 @@
-﻿  Access.cpp
-  addStudent.cpp
-  correctStudent.cpp
-  deleteStudent.cpp
+﻿  Password.cpp
   main.cpp
-C:\Users\nikul\source\repos\Example\main.cpp(10,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
-  MyForm1.cpp
-  Student.cpp
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+C:\Users\nikul\source\repos\Example\main.cpp(9,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
   Создание кода...
   Access.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Example.vcxproj -> C:\Users\nikul\source\repos\Example\Debug\Example.exe
